@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hicks Concrete & Landscaping LLC | Jacksonville, FL Concrete & Land Services</title>
+<meta name="description" content="Concrete driveways, patio extensions, pole barn slabs, tractor & tree work in the Jacksonville, FL area. Free quotes — call or text 904-327-2339.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#181614;
+    --asphalt:#26221d;
+    --yellow:#f2b705;
+    --yellow-deep:#d99e00;
+    --rust:#c1531b;
+    --concrete:#d8d4cb;
+    --concrete-dark:#a9a397;
+    --cream:#f6f3ec;
+    --white:#fff;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Archivo',sans-serif;
+    background:var(--cream);
+    color:var(--black);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Archivo Black',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:-0.01em;
+    line-height:0.95;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .hazard{
+    background-image:repeating-linear-gradient(45deg,var(--black) 0 18px,var(--yellow) 18px 36px);
+    height:10px;
+    width:100%;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    background:var(--black);
+    color:var(--cream);
+    padding:18px 6vw;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .logo{
+    font-family:'Archivo Black',sans-serif;
+    font-size:clamp(1.1rem,2.2vw,1.5rem);
+    text-transform:uppercase;
+    letter-spacing:-0.02em;
+  }
+  .logo span{color:var(--yellow);}
+  .header-cta{
+    background:var(--yellow);
+    color:var(--black);
+    font-weight:800;
+    padding:10px 20px;
+    border-radius:2px;
+    font-size:0.95rem;
+    letter-spacing:0.02em;
+    white-space:nowrap;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--asphalt);
+    color:var(--cream);
+    padding:70px 6vw 90px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-40%;
+    right:-15%;
+    width:70%;
+    height:180%;
+    background:radial-gradient(circle,rgba(242,183,5,0.12) 0%,transparent 65%);
+  }
+  .hero-inner{
+    position:relative;
+    max-width:1100px;
+    z-index:1;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--yellow);
+    color:var(--black);
+    font-weight:800;
+    font-size:0.8rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:6px 14px;
+    margin-bottom:26px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem,7vw,5.2rem);
+    margin-bottom:20px;
+  }
+  .hero h1 .stroke{
+    -webkit-text-stroke:2px var(--yellow);
+    color:transparent;
+  }
+  .hero p.lead{
+    font-size:clamp(1rem,2vw,1.3rem);
+    max-width:560px;
+    color:var(--concrete);
+    margin-bottom:36px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:16px 30px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    font-size:0.95rem;
+    border-radius:2px;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary{
+    background:var(--yellow);
+    color:var(--black);
+  }
+  .btn-outline{
+    border:2px solid var(--concrete);
+    color:var(--cream);
+  }
+  .btn:hover{
+    transform:translateY(-2px);
+  }
+  .btn-primary:hover{box-shadow:0 6px 0 var(--yellow-deep);}
+  .btn-outline:hover{box-shadow:0 6px 0 rgba(255,255,255,0.15);}
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{
+    background:var(--yellow);
+    color:var(--black);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    text-align:center;
+  }
+  .stats div{
+    padding:22px 10px;
+    border-right:1px solid rgba(0,0,0,0.15);
+  }
+  .stats div:last-child{border-right:none;}
+  .stats strong{
+    display:block;
+    font-family:'Archivo Black',sans-serif;
+    font-size:clamp(1.3rem,3vw,2rem);
+  }
+  .stats span{
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    font-weight:600;
+  }
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .section{
+    padding:80px 6vw;
+    max-width:1200px;
+    margin:0 auto;
+  }
+  .section-head{
+    margin-bottom:44px;
+    max-width:640px;
+  }
+  .tag{
+    color:var(--rust);
+    font-weight:800;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    font-size:0.8rem;
+    display:block;
+    margin-bottom:10px;
+  }
+  .section-head h2{
+    font-size:clamp(1.8rem,4.5vw,3rem);
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:2px;
+    background:var(--black);
+    border:2px solid var(--black);
+  }
+  .service-card{
+    background:var(--white);
+    padding:34px 26px;
+    position:relative;
+  }
+  .service-card .num{
+    position:absolute;
+    top:20px;
+    right:22px;
+    font-family:'Archivo Black',sans-serif;
+    font-size:0.75rem;
+    color:var(--concrete-dark);
+  }
+  .service-card h3{
+    font-size:1.15rem;
+    margin:8px 0 12px;
+    letter-spacing:0;
+  }
+  .service-card p{
+    font-size:0.92rem;
+    color:#54504a;
+  }
+  .service-card::before{
+    content:"";
+    display:block;
+    width:34px;
+    height:6px;
+    background:var(--yellow);
+    margin-bottom:18px;
+  }
+
+  /* ---------- WHY US / SPLIT ---------- */
+  .split{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    align-items:center;
+  }
+  @media (max-width:820px){
+    .split{grid-template-columns:1fr;}
+  }
+  .split ul{list-style:none;}
+  .split li{
+    display:flex;
+    gap:14px;
+    padding:16px 0;
+    border-bottom:1px solid var(--concrete);
+    font-weight:600;
+  }
+  .split li span.mark{
+    color:var(--rust);
+    font-family:'Archivo Black',sans-serif;
+  }
+  .why-card{
+    background:var(--black);
+    color:var(--cream);
+    padding:44px 34px;
+    position:relative;
+  }
+  .why-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:repeating-linear-gradient(45deg,var(--yellow) 0 14px,transparent 14px 28px);
+    opacity:0.06;
+  }
+  .why-card h3{
+    color:var(--yellow);
+    font-size:1.3rem;
+    margin-bottom:16px;
+  }
+  .why-card p{
+    position:relative;
+    color:var(--concrete);
+    font-size:0.98rem;
+  }
+  .why-card .phone{
+    position:relative;
+    display:block;
+    margin-top:26px;
+    font-family:'Archivo Black',sans-serif;
+    font-size:1.6rem;
+    color:var(--white);
+  }
+
+  /* ---------- AREAS ---------- */
+  .areas{
+    background:var(--asphalt);
+    color:var(--cream);
+  }
+  .areas .section-head .tag{color:var(--yellow);}
+  .area-chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .area-chips span{
+    border:1.5px solid var(--concrete-dark);
+    padding:9px 18px;
+    font-weight:700;
+    font-size:0.9rem;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+
+  /* ---------- CONTACT / CTA ---------- */
+  .cta-block{
+    background:var(--yellow);
+    padding:70px 6vw;
+    text-align:center;
+  }
+  .cta-block h2{
+    font-size:clamp(1.8rem,5vw,3.2rem);
+    margin-bottom:18px;
+  }
+  .cta-block p{
+    font-size:1.1rem;
+    margin-bottom:32px;
+    font-weight:600;
+  }
+  .cta-block .btn-primary{
+    background:var(--black);
+    color:var(--yellow);
+  }
+  .cta-block .btn-primary:hover{box-shadow:0 6px 0 rgba(0,0,0,0.4);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--black);
+    color:var(--concrete-dark);
+    padding:40px 6vw;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+    font-size:0.85rem;
+  }
+  footer strong{color:var(--cream);}
+
+  @media (max-width:600px){
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .stats div:nth-child(2){border-right:none;}
+    .stats div:nth-child(3){border-right:1px solid rgba(0,0,0,0.15);}
+  }
+</style>
+</head>
+<body>
+
+<div class="hazard"></div>
+
+<header>
+  <div class="logo">HICKS <span>CONCRETE</span> &amp; LANDSCAPING</div>
+  <a href="tel:9043272339" class="header-cta">Call/Text 904-327-2339</a>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">★★★★ Locally Owned · Jacksonville, FL Area</span>
+    <h1>Concrete &amp; Land Work<br>Built to <span class="stroke">Last.</span></h1>
+    <p class="lead">Driveways, patios, pole barn slabs, tractor and tree work — done right the first time, with fast turnaround and free quotes.</p>
+    <div class="hero-actions">
+      <a href="tel:9043272339" class="btn btn-primary">Call or Text Now</a>
+      <a href="#quote" class="btn btn-outline">Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div><strong>Free</strong><span>Quotes</span></div>
+  <div><strong>Fast</strong><span>Turnaround</span></div>
+  <div><strong>Call/Text</strong><span>904-327-2339</span></div>
+  <div><strong>Local</strong><span>Owned &amp; Operated</span></div>
+</div>
+
+<section class="section" id="services">
+  <div class="section-head">
+    <span class="tag">What We Do</span>
+    <h2>Services</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><span class="num">01</span><h3>Concrete Driveways</h3><p>New pours, resurfacing, and clean finish work for driveways of any size.</p></div>
+    <div class="service-card"><span class="num">02</span><h3>Driveway Extensions</h3><p>Add space for extra vehicles, boats, or equipment with a seamless tie-in.</p></div>
+    <div class="service-card"><span class="num">03</span><h3>Back Patio Extensions</h3><p>Expand your outdoor living space with a durable, level concrete patio.</p></div>
+    <div class="service-card"><span class="num">04</span><h3>Pole Barn &amp; Metal Building Slabs</h3><p>Solid, properly graded slabs built to spec for pole barns and metal buildings.</p></div>
+    <div class="service-card"><span class="num">05</span><h3>Concrete Removal</h3><p>Old slab, driveway, or patio removal and haul-off, ready for a fresh pour.</p></div>
+    <div class="service-card"><span class="num">06</span><h3>Asphalt Millings &amp; Rock</h3><p>Delivered and spread for driveways, pads, and drainage projects.</p></div>
+    <div class="service-card"><span class="num">07</span><h3>Tractor Work</h3><p>Grading, leveling, and land clearing with skid steer and excavator equipment.</p></div>
+    <div class="service-card"><span class="num">08</span><h3>Tree Work</h3><p>Tree removal and clearing to prep your property for what's next.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="split">
+    <div>
+      <div class="section-head">
+        <span class="tag">Why Hicks</span>
+        <h2>Work You Can Trust</h2>
+      </div>
+      <ul>
+        <li><span class="mark">01</span> Free, no-pressure quotes on every job</li>
+        <li><span class="mark">02</span> Fast turnaround — we show up and get it done</li>
+        <li><span class="mark">03</span> Concrete, tractor, and tree work under one roof</li>
+        <li><span class="mark">04</span> Serving Jacksonville, FL and surrounding areas</li>
+      </ul>
+    </div>
+    <div class="why-card">
+      <h3>Ready When You Are</h3>
+      <p>Whether it's a small patio extension or a full pole barn slab, we bring the right equipment and get the job done fast. Call or text today for a free quote — no obligation.</p>
+      <a href="tel:9043272339" class="phone">904-327-2339</a>
+    </div>
+  </div>
+</section>
+
+<section class="areas">
+  <div class="section">
+    <div class="section-head">
+      <span class="tag">Service Area</span>
+      <h2>Where We Work</h2>
+    </div>
+    <div class="area-chips">
+      <span>Jacksonville</span>
+      <span>St. Johns County</span>
+      <span>Clay County</span>
+      <span>Nassau County</span>
+      <span>Surrounding Areas</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta-block" id="quote">
+  <h2>Let's Get Your Project Started</h2>
+  <p>Free quotes. Fast turnaround. Call or text 904-327-2339.</p>
+  <a href="tel:9043272339" class="btn btn-primary">Call or Text Now</a>
+</section>
+
+<footer>
+  <div><strong>Hicks Concrete &amp; Landscaping LLC</strong><br>Jacksonville, FL Area</div>
+  <div>Call or Text: 904-327-2339<br>Free Quotes on Every Job</div>
+</footer>
+
+</body>
+</html>
