@@ -355,6 +355,87 @@
     .stats div:nth-child(2){border-right:none;}
     .stats div:nth-child(3){border-right:1px solid rgba(0,0,0,0.15);}
   }
+
+  /* ---------- TOAST NOTIFICATION ---------- */
+  .toast{
+    position:fixed;
+    bottom:24px;
+    left:24px;
+    right:24px;
+    max-width:420px;
+    background:var(--black);
+    color:var(--cream);
+    border:2px solid var(--yellow);
+    border-radius:4px;
+    padding:22px 22px 20px;
+    z-index:999;
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    transform:translateY(140%);
+    transition:transform 0.45s cubic-bezier(0.22,1,0.36,1);
+  }
+  .toast.show{transform:translateY(0);}
+  .toast-close{
+    position:absolute;
+    top:10px;
+    right:12px;
+    background:none;
+    border:none;
+    color:var(--concrete-dark);
+    font-size:1.3rem;
+    line-height:1;
+    cursor:pointer;
+    padding:4px;
+  }
+  .toast-close:hover{color:var(--cream);}
+  .toast-badge{
+    display:inline-block;
+    background:var(--yellow);
+    color:var(--black);
+    font-weight:800;
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:4px 10px;
+    margin-bottom:10px;
+  }
+  .toast h4{
+    font-family:'Archivo Black',sans-serif;
+    text-transform:uppercase;
+    font-size:1.05rem;
+    margin-bottom:8px;
+    letter-spacing:-0.01em;
+    padding-right:18px;
+  }
+  .toast p.offer-text{
+    font-size:0.92rem;
+    color:var(--concrete);
+    margin-bottom:12px;
+    line-height:1.4;
+  }
+  .toast-terms-toggle{
+    background:none;
+    border:none;
+    color:var(--yellow);
+    font-size:0.78rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    cursor:pointer;
+    padding:0;
+  }
+  .toast-terms{
+    display:none;
+    font-size:0.76rem;
+    color:var(--concrete-dark);
+    line-height:1.5;
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .toast-terms.open{display:block;}
+  @media (max-width:480px){
+    .toast{left:14px;right:14px;bottom:14px;padding:18px 18px 16px;}
+  }
 </style>
 </head>
 <body>
@@ -450,6 +531,35 @@
   <div><strong>Hicks Concrete &amp; Landscaping LLC</strong><br>Jacksonville, FL Area</div>
   <div>Call or Text: 904-327-2339<br>Free Quotes on Every Job</div>
 </footer>
+
+<div class="toast" id="promoToast">
+  <button class="toast-close" id="toastClose" aria-label="Close">&times;</button>
+  <span class="toast-badge">New Customer Special</span>
+  <h4>10% Off Your Project</h4>
+  <p class="offer-text">10% off any concrete or landscaping project booked and completed in July or August.</p>
+  <button class="toast-terms-toggle" id="toastTermsToggle">View Terms</button>
+  <div class="toast-terms" id="toastTerms">
+    Offer valid for new customers only. Minimum project cost of $500 required to qualify. Discount applies to labor costs only and excludes materials. Maximum discount of $300 per project. Project must be booked and fully completed within the promotional period (July 1 – August 31). Cannot be combined with any other offer or discount. Subject to change or cancellation without notice.
+  </div>
+</div>
+
+<script>
+  const toast = document.getElementById('promoToast');
+  const toastClose = document.getElementById('toastClose');
+  const termsToggle = document.getElementById('toastTermsToggle');
+  const termsBox = document.getElementById('toastTerms');
+
+  setTimeout(() => toast.classList.add('show'), 800);
+
+  toastClose.addEventListener('click', () => {
+    toast.classList.remove('show');
+  });
+
+  termsToggle.addEventListener('click', () => {
+    termsBox.classList.toggle('open');
+    termsToggle.textContent = termsBox.classList.contains('open') ? 'Hide Terms' : 'View Terms';
+  });
+</script>
 
 </body>
 </html>
